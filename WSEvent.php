@@ -1,7 +1,7 @@
 <?php
-include_once "module/IEvent.interface.php";
 
-class WSEvent implements IEvent 
+
+class WSEvent extends Module\AbsEvent 
 {
 	private $Response;
 
@@ -40,7 +40,7 @@ class WSEvent implements IEvent
 		$this->Response->body = "Fail";
 	}
 
-	function onGets($array)
+	public function onGets($array)
 	{
 		echo "onGets";
 		$this->Response->status = 200;

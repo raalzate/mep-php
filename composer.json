@@ -1,0 +1,16 @@
+{
+    "name": "raalzate/mvp",
+    "description": "simple patron para manejo de injección de dependencia y obligación unica",
+    "authors": [
+        {
+            "name": "Raul Andres Alzate Gomez",
+            "email": "alzategomez.raul@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Module\\":        "module/"
+        }
+    }
+}

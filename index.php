@@ -1,18 +1,20 @@
 <?php
-include "module/Presenter.class.php";
-include "Response.class.php";
-include "WSEvent.class.php";
+
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/Response.php';
+require_once __DIR__.'/WSEvent.php';
+
 
 $Response = new Response();
 $Event = new WSEvent($Response);
 
-$Presenter = new Presenter($Event);
+$Presenter = new Module\Presenter($Event);
 
 //$Presenter->delete();
 //$Presenter->create();
 //$Presenter->update();
 
-$Presenter->gets();
+$Presenter->create();
 
 var_dump($Response->body);
 ?>

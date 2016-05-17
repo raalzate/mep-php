@@ -1,7 +1,6 @@
 <?php
-include "IPresenter.interface.php";
-include "IEvent.interface.php";
-include "Model.class.php";
+
+namespace Module;
 
 
 class Presenter implements IPresenter 
@@ -19,7 +18,7 @@ class Presenter implements IPresenter
     	if(Model::insert()) {
     		$this->IEvent->onCreated();//notifica
     	} else {
-    		$e = new Exception("Fallo el insert");
+    		$e = new \Exception("Fallo el insert");
     		$this->IEvent->onError($e);
     	}
     }
