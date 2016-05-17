@@ -93,7 +93,7 @@ var_dump($Response->body); //print response body
 ```
 ### Instalación
 
-Para instalarlo se debe ejecutar compuser.
+Para instalarlo se debe ejecutar composer.
 
 ```
 $ composer install
