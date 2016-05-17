@@ -6,7 +6,7 @@ La estructura está basada en módulos, debe contener la siguiente estructura de
 ![Estrucutra de Caperta](https://raw.githubusercontent.com/raalzate/mep-php/master/images/carpetas.png)
 
 ### AbsEvent
-Es un contenedor de eventos para definir los suceso dentro del presentados, en este se debe colocar los eventos abstractos que son necesarios en la implementación y los eventos de activación que no son necesaria implementarlos. El ejemplo es:
+Es un contenedor de eventos para definir los suceso dentro del presentador, en este se debe colocar los eventos abstractos que son necesarios en la implementación y los eventos de activación que no son necesaria implementarlos. El ejemplo es:
 
 ``` 
 abstract class AbsEvent 
@@ -55,7 +55,7 @@ class Presenter implements IPresenter
 
 ### Extensión de Evento Inyector
 
-Para realiza la implementacion debemos realizar una inyeccion de dependecia al presentador, utilizamos la clase **AbsEvent** para obtener los eventos, pero antes debemos extenderla y sobrescribir los eventos que necesitamos, leugo debemos inyectar un objeto que transporte informacion o que nos determine los estados de los eventos, en este caso vamos a utilizar un manejador de respuesta, el ejemplo es:
+Para realiza la implementación debemos realizar una inyección de dependecia al presentador, utilizamos la clase **AbsEvent** para obtener los eventos, pero antes debemos extenderla y sobrescribir los eventos que necesitamos, luego debemos inyectar un objeto que transporte información o que nos determine los estados de los eventos, en este caso vamos a utilizar un manejador de respuesta, el ejemplo es:
 
 ```
 class WSEvent extends Module\AbsEvent 
