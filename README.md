@@ -52,3 +52,45 @@ class Presenter implements IPresenter
     }
 }
 ```
+
+### Extensión de Evento Inyector
+
+Para realiza la implementacion debemos realizar una inyeccion de dependecia al presentador, utilizamos la clase **AbsEvent** para obtener los eventos, pero antes debemos extenderla y sobrescribir los eventos que necesitamos, leugo debemos inyectar un objeto que transporte informacion o que nos determine los estados de los eventos, en este caso vamos a utilizar un manejador de respuesta, el ejemplo es:
+
+```
+class WSEvent extends Module\AbsEvent 
+{
+	private $Response;
+
+	function __construct($Response)
+    {
+       $this->Response = $Response;
+    }
+
+	public function onCreated()
+	{
+		echo "onCreated";
+		$this->Response->status = 200;
+		$this->Response->body = "OK";
+	} 
+} 	
+```
+
+### Implementación
+
+Ahora este es el ultimo paso, la ejecución del Demo:
+
+```
+$Response = new Response();
+$Event = new WSEvent($Response);//inyection response
+
+$Presenter = new Module\Presenter($Event);//inyection event
+
+$Presenter->create(); //excecute action
+
+var_dump($Response->body); //print response body 
+
+```
+
+
+
