@@ -91,6 +91,13 @@ $Presenter->create(); //excecute action
 var_dump($Response->body); //print response body 
 
 ```
+### Instalación
+
+Para instalarlo se debe ejecutar compuser.
+
+```
+$ composer install
+```
 
 
 
